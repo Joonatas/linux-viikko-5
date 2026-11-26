@@ -26,3 +26,4 @@ Flask + Ollama + MariaDB chat application.
 - Nginx
 - Gunicorn
 - GitHub Actions
+- Deployment test
