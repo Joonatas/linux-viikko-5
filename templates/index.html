@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Viikko 5 Chat</title>
+</head>
+<body>
+
+<h1>Viikko 5 LLM Chat</h1>
+
+<div id="history">
+{% for role,message in history %}
+<p><b>{{ role }}</b>: {{ message }}</p>
+{% endfor %}
+</div>
+
+<form id="chatform">
+
+<input
+type="text"
+name="message"
+id="message"
+required>
+
+<button type="submit">
+Send
+</button>
+
+</form>
+
+<script>
+document.getElementById("chatform").onsubmit = async function(e){
+
+e.preventDefault();
+
+const formData = new FormData(this);
+
+const response = await fetch("chat",{
+method:"POST",
+body:formData
+});
+
+location.reload();
+}
+</script>
+
+</body>
+</html>
