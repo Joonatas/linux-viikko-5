@@ -88,7 +88,7 @@ def chat():
 
 @app.route("/health")
 def health():
-    return "OK"
+    return os.getenv("GIT_SHA", "unknown")
 
 
 if __name__ == "__main__":
